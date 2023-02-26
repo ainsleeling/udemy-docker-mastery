@@ -2,16 +2,37 @@
 
 [![Lint Code Base](https://github.com/BretFisher/udemy-docker-mastery/actions/workflows/call-super-linter.yaml/badge.svg)](https://github.com/BretFisher/udemy-docker-mastery/actions/workflows/call-super-linter.yaml)
 
-> Build, test, deploy containers with the best mega-course on Docker, Kubernetes, Compose, Swarm and Registry using DevOps
+### Expose host to physical network
+docker container run -p 
+```shell
+docker container run -p 80:80 --name webhost -d nginx
+docker container port webhost
+docker container inspect --format '{{ .NetworkSettings.IPAddress }}' webhost
+```
+## Docker Networks
 
-This repository is for use in my Udemy Courses "Docker Mastery" and "Swarm Mastery"
+### Show networks
+```shell
+docker network ls
+```
 
-NOTE: As of July 2020 the new default branch is `main`, so please update your clone if you're still on `master` branch.
+### Inspect a network
+```shell
+docker network inspect
+```
 
-Get these courses for with my "cheapest on the internet" coupon links:
+### Create a network
+```shell
+docker network create --driver
+```
 
-[bretfisher.com/courses](https://www.bretfisher.com/courses)
+### Attach a network to a container
+```shell
+docker network connect
+```
 
-My other DevOps and Docker resources are at [bretfisher.com/docker](https://www.bretfisher.com/docker)
+### Detach a network from container
+```shell
+docker network disconnect
+```
 
-Feel free to create issues or PRs if you find a problem with examples in this repository!
